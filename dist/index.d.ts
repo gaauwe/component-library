@@ -1,4 +1,4 @@
-import { MouseEventHandler, FC } from 'react';
+import { MouseEventHandler, FC, ChangeEventHandler } from 'react';
 
 declare type buttonThemeType = {
     theme: string;
@@ -13,4 +13,16 @@ interface ButtonProps {
 }
 declare const Button: FC<ButtonProps>;
 
-export { Button, ButtonProps, buttonThemeType };
+interface InputProps {
+    id?: string;
+    label?: string;
+    error?: boolean;
+    message?: string;
+    success?: boolean;
+    disabled?: boolean;
+    placeholder?: string;
+    onChange?: ChangeEventHandler<HTMLInputElement>;
+}
+declare const Input: FC<InputProps>;
+
+export { Button, ButtonProps, Input, InputProps, buttonThemeType };
