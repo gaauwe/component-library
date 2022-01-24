@@ -13,6 +13,10 @@ interface ButtonProps {
 }
 declare const Button: FC<ButtonProps>;
 
+declare type inputThemeType = {
+    theme: string;
+};
+
 interface InputProps {
     id?: string;
     label?: string;
@@ -25,4 +29,4 @@ interface InputProps {
 }
 declare const Input: FC<InputProps>;
 
-export { Button, ButtonProps, Input, InputProps, buttonThemeType };
+export { Button, ButtonProps, Input, InputProps, buttonThemeType, inputThemeType };

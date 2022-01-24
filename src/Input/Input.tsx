@@ -1,7 +1,7 @@
 import React, { FC, Fragment } from "react";
-import styled from "styled-components";
 import { ChangeEventHandler } from "react";
 import { StyledInput, StyledLabel, StyledMessage, StyledText } from "./Input.style";
+import { inputThemeType } from "./Input.theme";
 
 export interface InputProps {
   id?: string;
@@ -39,3 +39,4 @@ const Input: FC<InputProps> = ({ id, disabled, label, message, error, success, o
 };
 
 export default Input;
+export type { inputThemeType };
