@@ -4,6 +4,8 @@ import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
 import { terser } from "rollup-plugin-terser";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
+import del from "rollup-plugin-delete";
+import renameNodeModules from "rollup-plugin-rename-node-modules";
 
 const packageJson = require("./package.json");
 
@@ -12,22 +14,27 @@ export default [
     input: "src/index.tsx",
     output: [
       {
-        file: packageJson.main,
-        format: "cjs",
+        dir: "./dist",
+        format: "es",
+        preserveModules: true,
         sourcemap: true,
-      },
-      {
-        file: packageJson.module,
-        format: "esm",
-        sourcemap: true,
+        preserveModulesRoot: "src",
       },
     ],
-    plugins: [peerDepsExternal(), resolve(), commonjs(), typescript({ tsconfig: "./tsconfig.json" }), terser()],
+    plugins: [
+      del({ targets: "dist/*" }),
+      peerDepsExternal(),
+      resolve(),
+      renameNodeModules("ext"),
+      commonjs(),
+      typescript({ tsconfig: "./tsconfig.json" }),
+      terser(),
+    ],
     external: ["react", "react-dom", "styled-components"],
   },
   {
-    input: "dist/esm/types/index.d.ts",
+    input: "dist/dts/index.d.ts",
     output: [{ file: "dist/index.d.ts", format: "esm" }],
-    plugins: [dts()],
+    plugins: [dts(), del({ targets: "dist/dts", hook: "buildEnd" })],
   },
 ];

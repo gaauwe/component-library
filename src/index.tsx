@@ -1,4 +1,2 @@
-import Button from "./components/Button/Button";
-import Input from "./components/Input/Input";
-
-export { Button, Input };
+export { default as Button } from "./Button/Button";
+export * from "./Button/Button";

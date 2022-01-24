@@ -1,9 +1,7 @@
-import React, { FC } from "react";
 import styled from "styled-components";
+import { ButtonProps } from "./Button";
 
-import { ButtonProps } from "./Button.types";
-
-const StyledButton = styled.button<ButtonProps>`
+export const StyledButton = styled.button<ButtonProps>`
   border: 0;
   line-height: 1;
   font-size: 15px;
@@ -24,13 +22,3 @@ const StyledButton = styled.button<ButtonProps>`
     padding: ${(props) => (props.size === "small" ? "5px 23px 6px" : props.size === "medium" ? "7px 28px 9px" : "12px 28px 14px")};
   }
 `;
-
-const Button: FC<ButtonProps> = ({ size, primary, disabled, text, onClick, ...props }) => {
-  return (
-    <StyledButton type="button" onClick={onClick} primary={primary} disabled={disabled} size={size} {...props}>
-      {text}
-    </StyledButton>
-  );
-};
-
-export default Button;
