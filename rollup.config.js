@@ -28,7 +28,6 @@ export default [
       renameNodeModules("ext"),
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
-      terser(),
     ],
     external: ["react", "react-dom", "styled-components"],
   },

@@ -1,2 +1,16 @@
-import{__rest as e,__assign as r}from'./../ext/tslib/tslib.es6.js';import l,{Fragment as t}from"react";import{StyledLabel as a,StyledText as s,StyledInput as o,StyledMessage as n}from"./Input.style.js";var c=function(c){var d=c.id,m=c.disabled,i=c.label,u=c.message,p=c.error,b=c.success,h=c.onChange,E=c.placeholder,f=e(c,["id","disabled","label","message","error","success","onChange","placeholder"]);return l.createElement(t,null,l.createElement(a,null,l.createElement(s,{disabled:m,error:p},i)),l.createElement(o,r({id:d,type:"text",onChange:h,disabled:m,error:p,success:b,placeholder:E},f)),l.createElement(n,null,l.createElement(s,{error:p},u)))};export{c as default};
+import { __rest, __assign } from './../ext/tslib/tslib.es6.js';
+import React, { Fragment } from 'react';
+import { StyledLabel, StyledText, StyledInput, StyledMessage } from './Input.style.js';
+
+var Input = function (_a) {
+    var id = _a.id, disabled = _a.disabled, label = _a.label, message = _a.message, error = _a.error, success = _a.success, onChange = _a.onChange, placeholder = _a.placeholder, props = __rest(_a, ["id", "disabled", "label", "message", "error", "success", "onChange", "placeholder"]);
+    return (React.createElement(Fragment, null,
+        React.createElement(StyledLabel, null,
+            React.createElement(StyledText, { disabled: disabled, error: error }, label)),
+        React.createElement(StyledInput, __assign({ id: id, type: "text", onChange: onChange, disabled: disabled, error: error, success: success, placeholder: placeholder }, props)),
+        React.createElement(StyledMessage, null,
+            React.createElement(StyledText, { error: error }, message))));
+};
+
+export { Input as default };
 //# sourceMappingURL=Input.js.map
