@@ -11,7 +11,7 @@ export interface ButtonProps {
   onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
-const Button: FC<ButtonProps> = ({ size, primary, disabled, text, onClick, ...props }) => {
+const Button = ({ size, primary, disabled, text, onClick, ...props }: ButtonProps): JSX.Element => {
   return (
     <StyledButton type="button" onClick={onClick} primary={primary} disabled={disabled} size={size} {...props}>
       {text}

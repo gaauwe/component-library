@@ -1,4 +1,4 @@
-import { MouseEventHandler, FC, ChangeEventHandler } from 'react';
+import { MouseEventHandler, ChangeEventHandler, FC } from 'react';
 
 declare type buttonThemeType = {
     theme: string;
@@ -11,7 +11,7 @@ interface ButtonProps {
     size?: "small" | "medium" | "large";
     onClick?: MouseEventHandler<HTMLButtonElement>;
 }
-declare const Button: FC<ButtonProps>;
+declare const Button: ({ size, primary, disabled, text, onClick, ...props }: ButtonProps) => JSX.Element;
 
 declare type inputThemeType = {
     theme: string;
