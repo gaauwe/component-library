@@ -4,12 +4,16 @@ declare type buttonThemeType = {
     theme: string;
 };
 
+interface ThemeInterface {
+    name: "ComponentTheme";
+}
 interface ButtonProps {
     text?: string;
     primary?: boolean;
     disabled?: boolean;
     size?: "small" | "medium" | "large";
     onClick?: MouseEventHandler<HTMLButtonElement>;
+    themeName?: ThemeInterface["name"];
 }
 declare const Button: ({ size, primary, disabled, text, onClick, ...props }: ButtonProps) => JSX.Element;
 
@@ -29,4 +33,4 @@ interface InputProps {
 }
 declare const Input: FC<InputProps>;
 
-export { Button, ButtonProps, Input, InputProps, buttonThemeType, inputThemeType };
+export { Button, ButtonProps, Input, InputProps, ThemeInterface, buttonThemeType, inputThemeType };
