@@ -32,9 +32,9 @@ export default [
     ],
     external: ["react", "react-dom", "styled-components"],
   },
-  {
-    input: "dist/dts/index.d.ts",
-    output: [{ file: "dist/index.d.ts", format: "esm" }],
-    plugins: [dts(), del({ targets: "dist/dts", hook: "buildEnd" })],
-  },
+  // {
+  //   input: "dist/dts/index.d.ts",
+  //   output: [{ file: "dist/index.d.ts", format: "esm" }],
+  //   plugins: [dts(), del({ targets: "dist/dts", hook: "buildEnd" })],
+  // },
 ];

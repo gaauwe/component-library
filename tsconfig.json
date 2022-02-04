@@ -6,7 +6,7 @@
     "jsx": "react",
     "module": "ESNext",
     "declaration": true,
-    "declarationDir": "dist/dts",
+    "declarationDir": "dist",
     "sourceMap": true,
     "moduleResolution": "node",
     "emitDeclarationOnly": true,
